@@ -13,6 +13,7 @@ import {
 } from '@ant-design/icons';
 import type {MenuProps}
 from 'antd';
+import { useNavigate } from 'react-router-dom';
 import userImage from '../image/user.jpg'
 import {Menu, Image} from 'antd';
 import axios from 'axios'
@@ -58,6 +59,7 @@ const items: MenuProps['items'] = [
 // ========================================================
 const Siderbar: React.FC = () => {
     const [userDetails, setUserDetails] = useState < any > ([]);
+    const navigate=useNavigate()
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users/1').then(response => setUserDetails(response.data)).catch(error => console.log(error))
@@ -66,6 +68,7 @@ const Siderbar: React.FC = () => {
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
+        navigate('/app/post')
     };
 
     return (<>

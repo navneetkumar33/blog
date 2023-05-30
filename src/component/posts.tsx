@@ -7,6 +7,7 @@ import {PostType} from '../types/util'
 import { DateFunction } from '../types/util'
 import { useNavigate } from 'react-router-dom'
 
+
 const Posts = () => {
 const [posts, setPosts] = useState<any>([])
 const date=new Date();
@@ -20,7 +21,7 @@ useEffect(() => {
 }, [])
 
 const handlePost=(post:any)=>{
-navigate(`/app/post/${post.id}`,{state:{...post}})    
+navigate(`/app/post/${post.id}`,{state:{post: post}})    
 }
 
 return (<>
