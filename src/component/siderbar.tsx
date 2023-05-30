@@ -16,7 +16,10 @@ from 'antd';
 import { useNavigate } from 'react-router-dom';
 import userImage from '../image/user.jpg'
 import {Menu, Image} from 'antd';
-import axios from 'axios'
+import axios from 'axios';
+
+
+
 
 type MenuItem = Required < MenuProps > ['items'][number];
 
@@ -56,7 +59,7 @@ const items: MenuProps['items'] = [
         getItem('Needs Helps', '10'),
     ], 'group'),
 ];
-// ========================================================
+
 const Siderbar: React.FC = () => {
     const [userDetails, setUserDetails] = useState < any > ([]);
     const navigate=useNavigate()
@@ -83,6 +86,7 @@ const Siderbar: React.FC = () => {
 
             }
         }>
+            
         </div>
         <div style={
             {
@@ -103,7 +107,7 @@ const Siderbar: React.FC = () => {
                         marginTop:'40px'
                     }
                 }
-                src={userImage}/>
+                src={userImage} alt="image"/>
           
              <span style={{
                 marginTop:"-125px"

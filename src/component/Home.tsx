@@ -15,7 +15,7 @@ const headerStyle: React.CSSProperties = {
     paddingInline: 50,
     lineHeight: '64px',
     backgroundColor: '#fff',
-    // border: ' 1px solid black'
+
 };
 
 const contentStyle: React.CSSProperties = {
@@ -24,7 +24,7 @@ const contentStyle: React.CSSProperties = {
     lineHeight: '120px',
     color: '#000',
     backgroundColor: '#fff',
-    // border: ' 1px solid black'
+   
 };
 
 const siderStyle: React.CSSProperties = {
@@ -32,7 +32,7 @@ const siderStyle: React.CSSProperties = {
     lineHeight: '180px',
     color: '#000',
     backgroundColor: '#fff',
-    // border: ' 1px solid black'
+   
 };
 
 const footerStyle: React.CSSProperties = {
