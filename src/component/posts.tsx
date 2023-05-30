@@ -5,11 +5,12 @@ import {Image} from 'antd'
 import axios from 'axios'
 import {PostType} from '../types/util'
 import { DateFunction } from '../types/util'
+import { useNavigate } from 'react-router-dom'
 
 const Posts = () => {
 const [posts, setPosts] = useState<any>([])
 const date=new Date();
-
+const navigate=useNavigate();
 // get post function
 
 useEffect(() => {
@@ -18,6 +19,9 @@ useEffect(() => {
     .catch(error => console.log(error))
 }, [])
 
+const handlePost=(post:any)=>{
+navigate(`/app/post/${post.id}`,{state:{...post}})    
+}
 
 return (<>
     <div><Menu/></div>
@@ -33,7 +37,7 @@ return (<>
                         marginTop: '5px',
                         marginBottom: '0px'
                     }
-            }>
+            } onClick={()=>handlePost(post)}>
                 <img style={
                         {float: 'left'}
                     }

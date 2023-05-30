@@ -5,6 +5,10 @@ export type PostType = {
     body: string
 }[]
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
 export const DateFunction=(date:Date)=>{
-  return `${date.getMonth()} ${date.getDay()}, ${date.getFullYear()}`
+  return `${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`
 }

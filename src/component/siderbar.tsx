@@ -8,7 +8,8 @@ import {
     InfoCircleOutlined,
     InboxOutlined,
     CheckCircleOutlined,
-    MenuOutlined
+    MenuOutlined,
+    PicLeftOutlined
 } from '@ant-design/icons';
 import type {MenuProps}
 from 'antd';
@@ -29,6 +30,7 @@ function getItem(label : React.ReactNode, key : React.Key, icon? : React.ReactNo
 }
 
 const items: MenuProps['items'] = [
+    getItem('Live Metrics', 'grp',<PicLeftOutlined />),
     getItem('Deskboard', 'sub1', null, [
         getItem('', 'g1', null, [
             getItem('Overview', '1', <WifiOutlined/>),
@@ -73,15 +75,39 @@ const Siderbar: React.FC = () => {
                 height: '30px',
                 backgroundColor: 'skyblue',
                 display: 'flex',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                marginBottom:'10px'
 
             }
-        }></div>
-        {/* <div  style={{width:'40px',height:'40px',borderRadius:'50%', display:'flex',justifyContent:'center', alignItems:'center', margin:"20px"}}>
-                <Image style={{width:'60px',height:'60px',borderRadius:'50%'}} src={userImage}/>
-            </div>          */}
-            <span>{userDetails.name}</span>
+        }>
+        </div>
+        <div style={
+            {
+                width: '100%',
+                height: '60px',
+                borderRadius: '50%',
+                display: 'flex',
+                flexDirection:'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }
+        }>
+            <Image style={
+                    {
+                        width: '50px',
+                        height: '50px',
+                        borderRadius: '50%',
+                        marginTop:'40px'
+                    }
+                }
+                src={userImage}/>
+          
+             <span style={{
+                marginTop:"-125px"
+             }}>{userDetails.name}</span>
 
+        </div>
+        
         <Menu onClick={onClick}
             style={
                 {width: '100%'}

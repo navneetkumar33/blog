@@ -4,7 +4,7 @@ import Siderbar from './siderbar';
 import SearchPanel from './searchPanel';
 import AppContainer from './appContainer';
 import Paginations from './pagination';
-
+import AppRoutes from '../route/route';
 
 const {Header, Footer, Sider, Content} = Layout;
 
@@ -54,7 +54,7 @@ const Home: React.FC = () => (
             <Sider style={siderStyle}><Siderbar/></Sider>
             <Layout>
                 <Header style={headerStyle}><SearchPanel/></Header>
-                <Content style={contentStyle}><AppContainer/></Content>
+                <Content style={contentStyle}><AppRoutes/></Content>
                 <Footer style={footerStyle}><Paginations/></Footer>
             </Layout>
         </Layout>
