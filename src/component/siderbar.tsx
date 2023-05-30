@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     AppstoreOutlined,
     MailOutlined,
@@ -14,6 +14,7 @@ import type {MenuProps}
 from 'antd';
 import userImage from '../image/user.jpg'
 import {Menu, Image} from 'antd';
+import axios from 'axios'
 
 type MenuItem = Required < MenuProps > ['items'][number];
 
@@ -52,44 +53,48 @@ const items: MenuProps['items'] = [
         getItem('Needs Helps', '10'),
     ], 'group'),
 ];
-
+// ========================================================
 const Siderbar: React.FC = () => {
+    const [userDetails, setUserDetails] = useState < any > ([]);
+
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/users/1').then(response => setUserDetails(response.data)).catch(error => console.log(error))
+    }, [])
+
+
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
     };
 
-    return (
-        <>  
+    return (<>
         <div style={
-                {
-                    width: '100%',
-                    height: '30px',
-                    backgroundColor: 'skyblue',
-                    display: 'flex',
-                    justifyContent: 'space-between'
+            {
+                width: '100%',
+                height: '30px',
+                backgroundColor: 'skyblue',
+                display: 'flex',
+                justifyContent: 'space-between'
 
-                }
-            }>   
-
-            </div>
-            {/* <div  style={{width:'40px',height:'40px',borderRadius:'50%', display:'flex',justifyContent:'center', alignItems:'center', margin:"20px"}}>
+            }
+        }></div>
+        {/* <div  style={{width:'40px',height:'40px',borderRadius:'50%', display:'flex',justifyContent:'center', alignItems:'center', margin:"20px"}}>
                 <Image style={{width:'60px',height:'60px',borderRadius:'50%'}} src={userImage}/>
             </div>          */}
-            
-            <Menu onClick={onClick}
-                style={
-                    {width: '100%'}
-                }
-                defaultSelectedKeys={
-                    ['1']
-                }
-                defaultOpenKeys={
-                    ['sub1']
-                }
-                mode="inline"
-                items={items}/>
-        </>
-    );
+            <span>{userDetails.name}</span>
+
+        <Menu onClick={onClick}
+            style={
+                {width: '100%'}
+            }
+            defaultSelectedKeys={
+                ['1']
+            }
+            defaultOpenKeys={
+                ['sub1']
+            }
+            mode="inline"
+            items={items}/>
+    </>);
 };
 
 export default Siderbar;
