@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import userImage from '../image/user.jpg'
 import {Menu, Image} from 'antd';
 import axios from 'axios';
+import {StyledDiv,StyledDivImage} from './Siderbar.style'
 
 
 
@@ -76,45 +77,16 @@ const Siderbar: React.FC = () => {
     };
 
     return (<>
-        <div style={
-            {
-                width: '100%',
-                height: '30px',
-                backgroundColor: 'skyblue',
-                display: 'flex',
-                justifyContent: 'space-between',
-                marginBottom:'10px'
-
-            }
-        }>
+        <StyledDiv>
             
-        </div>
-        <div style={
-            {
-                width: '100%',
-                height: '60px',
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection:'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }
-        }>
-            <Image style={
-                    {
-                        width: '50px',
-                        height: '50px',
-                        borderRadius: '50%',
-                        marginTop:'40px'
-                    }
-                }
+        </StyledDiv>
+        <StyledDivImage >
+            <Image 
                 src={userImage} alt="image"/>
           
-             <span style={{
-                marginTop:"-125px"
-             }}>{userDetails.name}</span>
+             <span >{userDetails.name}</span>
 
-        </div>
+        </StyledDivImage>
         
         <Menu onClick={onClick}
             style={

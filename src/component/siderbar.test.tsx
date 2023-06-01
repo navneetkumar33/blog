@@ -1,9 +1,8 @@
-export {}
+
 import {render, screen} from '@testing-library/react'
 import Siderbar from './siderbar'
-
-it('SliderWar Render Correctly',async ()=>{
+test('SliderWar Render Api Call correctly',async ()=>{
     render(<Siderbar/>)
-    const textElement= await screen.findByText('Leanne Graham')
+    const textElement= await screen.findByText('Ervin Howell')
     expect(textElement).toBeInTheDocument()
 })
