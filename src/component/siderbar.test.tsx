@@ -1,9 +1,9 @@
 export {}
 import {render, screen} from '@testing-library/react'
-import AppContainer from './appContainer'
+import Siderbar from './siderbar'
 
 it('SliderWar Render Correctly',()=>{
-    render(<AppContainer/>)
-    const textElement=screen.getAllByText('et ea vero quia laudantium autem')
+    render(<Siderbar/>)
+    const textElement='Leanne Graham'
     expect(textElement).toBeInTheDocument()
 })

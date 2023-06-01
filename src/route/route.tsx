@@ -7,7 +7,7 @@ import PostDetails from '../component/postDetails'
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/app/post"
+            <Route path="/"
                 element={<AppContainer/>}/>
             <Route path="/app/post/:post_id"
                 element={<PostDetails/>}></Route>

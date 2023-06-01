@@ -2,7 +2,6 @@ import React from 'react';
 import {Layout, Space} from 'antd';
 import Siderbar from './siderbar';
 import SearchPanel from './searchPanel';
-import AppContainer from './appContainer';
 import Paginations from './pagination';
 import AppRoutes from '../route/route';
 
