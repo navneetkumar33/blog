@@ -11,6 +11,7 @@ import {
     MenuOutlined,
     PicLeftOutlined
 } from '@ant-design/icons';
+import {AppRoute} from '../appRoute/appRoute'
 import type {MenuProps}
 from 'antd';
 import { useNavigate } from 'react-router-dom';
@@ -65,13 +66,13 @@ const Siderbar: React.FC = () => {
     const navigate=useNavigate()
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/users/1').then(response => setUserDetails(response.data)).catch(error => console.log(error))
+        axios.get(`${AppRoute.BASE_URL}/1`).then(response => setUserDetails(response.data)).catch(error => console.log(error))
     }, [])
 
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
-        navigate('/app/post')
+        navigate('/')
     };
 
     return (<>

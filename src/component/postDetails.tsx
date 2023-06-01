@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Form, Input, Button} from 'antd';
 import {useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import {AppRoute} from '../appRoute/appRoute';
+import {StyledForm} from './postDetails.style'
+
 
 interface postContent {
     post: {
@@ -40,48 +43,28 @@ const PostDetails = () => {
             body: postBody
         })
         console.log(editPost)
-    axios.put(`https://jsonplaceholder.typicode.com/posts/${postid}`,editPost)
+    axios.put(`${AppRoute.BASE_URL}/${postid}`,editPost)
     .then(res=>console.log("post update successfully"))
     .catch((error)=>console.log(error.message));
-    navigate('/app/post')
+    navigate('/')
       }
    
     return (
-           <form style={
-            {
-                width:'60%',
-                lineHeight:'40px',
-                margin:' 10px 100px',
-            }
-        }
+           <StyledForm
          onSubmit={(e)=>handleSubmit(e)}>
-            <label htmlFor='posttitle' style={{
-                fontSize:'16px',
-                fontWeight:700,
-                margin:'10px',
-            }}>
+            <label htmlFor='posttitle'>
                 Post Title
             </label>
-            <input style={{
-                width:'100%',
-               height:'40px'
-            }} type="text" value={postTitle} id="posttitle" onChange={(e)=>setPostTitle(e.target.value)}/>
+            <input  type="text" value={postTitle} id="posttitle" onChange={(e)=>setPostTitle(e.target.value)}/>
             <br></br>
-            <label htmlFor='postbody' style={{
-                fontSize:'16px',
-                fontWeight:700,
-                margin:'10px',
-            }}>
+            <label htmlFor='postbody' >
                 Post Body
             </label>
-            <input  style={{
-                width:'100%',
-               height:'40px'
-            }} type="text" value={postBody} id="postbody" onChange={(e)=>setPostBody(e.target.value)}/>
+            <input   type="text" value={postBody} id="postbody" onChange={(e)=>setPostBody(e.target.value)}/>
             <br></br>
-            <button  style={{width:'25%', margin:'2% 25%'}} type="submit" >submit</button>
-            <button style={{width:'25%', margin:'2% 25%'}}>Delete</button>            
-        </form>
+            <button  type="submit" >submit</button>
+            <button>Delete</button>            
+        </StyledForm>
     )
 };
 
