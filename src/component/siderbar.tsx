@@ -66,7 +66,7 @@ const Siderbar: React.FC = () => {
     const navigate=useNavigate()
 
     useEffect(() => {
-        axios.get(`${AppRoute.BASE_URL}/1`).then(response => setUserDetails(response.data)).catch(error => console.log(error))
+        axios.get(`${AppRoute.BASE_URL}${AppRoute.USER_ROUTE}`).then(response => setUserDetails(response.data)).catch(error => console.log(error))
     }, [])
 
 
