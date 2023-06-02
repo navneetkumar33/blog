@@ -1,5 +1,5 @@
 export const AppRoute = {
-    BASE_URL: 'https://jsonplaceholder.typicode.com',
+    BASE_URL: process.env.REACT_APP_BASE_URL,
     USER_ROUTE: '/users/2',
     BLOG_ROUTE: '/user/2/posts'
 }

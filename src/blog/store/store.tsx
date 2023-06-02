@@ -16,7 +16,8 @@ export type userType = {
 }
 export type blogContexttype = {
     user: userType | null | undefined,
-    blog: blogType[] | null
+    blog: blogType[] | null,
+    error: string | null
 }
 type blogContextPropsType = {
     children: React.ReactNode
@@ -39,7 +40,7 @@ export const BlogContextProvider= ({children} : blogContextPropsType) => {
         
           }, []); 
              return <BlogContext.Provider value={
-        {user, blog}
+        {user, blog, error}
     }> {children} </BlogContext.Provider>
 }
 

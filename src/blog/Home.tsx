@@ -5,7 +5,10 @@ import SearchPanel from './search-panel';
 import ContentWeb from './content';
 import AppRoutes from '../route/route';
 import PaginationBar from './pagination';
+import { useGlobalBlogContextProvider } from './store/store';
+import { blogContexttype } from './store/store';
 const { Header, Footer, Sider, Content } = Layout;
+
 
 
 const headerStyle: React.CSSProperties = {
@@ -40,18 +43,20 @@ const footerStyle: React.CSSProperties = {
   // backgroundColor: '#7dbcea',
 };
 
-const Home: React.FC = () => (
+const Home: React.FC = () => {
+  const {error}=useGlobalBlogContextProvider() as blogContexttype;
+  return(
   <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
    <Layout>
       <Sider style={siderStyle}><MenuList/></Sider>
       <Layout>
         <Header style={headerStyle}><SearchPanel/></Header>
-        <Content style={contentStyle}><AppRoutes/></Content>
+        <Content style={contentStyle}>{error? (<h3 style={{color:"red", textAlign:'left'}}>{error}</h3>):(<AppRoutes/>)}</Content>
         <Footer style={footerStyle}><PaginationBar/></Footer>
       </Layout>
     </Layout>
   </Space>
 );
-
+}
 
 export default Home

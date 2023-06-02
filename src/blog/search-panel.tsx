@@ -27,15 +27,15 @@ const SearchPanel = () => {
                     <SearchOutlined
                 className="site-form-item-icon"/>
                 }/>
-            <span> <PlusOutlined/>add</span>
+            <span style={{ fontSize:'16px'}}> <PlusOutlined style={{ fontSize:'20px'}}/>add</span>
             <Badge>
-                <BellOutlined/>
+                <BellOutlined style={{ fontSize:'20px'}}/>
             </Badge>
             <Badge>
-                <MailOutlined/>
+                <MailOutlined style={{ fontSize:'20px'}}/>
             </Badge>
             <Badge>
-                <AppstoreOutlined/>
+                <AppstoreOutlined style={{ fontSize:'20px'}}/>
             </Badge>
             <Image style={
                     {
