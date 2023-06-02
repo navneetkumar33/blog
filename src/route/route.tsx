@@ -1,14 +1,13 @@
 import {Routes, Route} from 'react-router-dom'
-import Home from '../component/Home'
-import AppContainer from '../component/appContainer'
-import PostDetails from '../component/postDetails'
+import ContentWeb from '../blog/content';
+import PostDetails from '../blog/postDetails';
 
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/"
-                element={<AppContainer/>}/>
+                element={<ContentWeb/>}/>
             <Route path="/app/post/:post_id"
                 element={<PostDetails/>}></Route>
         </Routes>

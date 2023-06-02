@@ -1,5 +1,4 @@
-import React from 'react'
-import {Input, Image} from 'antd';
+import {Input, Image, Badge} from 'antd';
 import {
     SearchOutlined,
     PlusOutlined,
@@ -17,24 +16,27 @@ const SearchPanel = () => {
                 alignItems: 'center'
             }
         }>
-            <Input placeholder="Enter your username"
+            <Input placeholder="Enter text to search"
                 style={
                     {
                         width: '80%',
                         float: 'left'
-
                     }
                 }
                 prefix={
                     <SearchOutlined
                 className="site-form-item-icon"/>
                 }/>
-
-            <PlusOutlined/>
-            <span>add</span>
-            <BellOutlined/>
-            <MailOutlined/>
-            <AppstoreOutlined/>
+            <span> <PlusOutlined/>add</span>
+            <Badge>
+                <BellOutlined/>
+            </Badge>
+            <Badge>
+                <MailOutlined/>
+            </Badge>
+            <Badge>
+                <AppstoreOutlined/>
+            </Badge>
             <Image style={
                     {
                         width: '30px',

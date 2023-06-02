@@ -1,11 +1,14 @@
 import React from 'react';
-import Home from './component/Home'
+import Home from './blog/Home';
+
+
 
 
 const App = () => {
     return (
     <>
-     <Home/>
+        {/* <Home/> */}
+       <Home/>     
     </>
     )
 }

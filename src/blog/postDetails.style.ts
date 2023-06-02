@@ -5,6 +5,7 @@ export const StyledForm=styled.form`
 width: 60%;
 line-height: 40px;
 margin: 10px 100px;
+color:#000;
 
 label{
     font-size: 16px;
